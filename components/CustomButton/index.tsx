@@ -3,7 +3,7 @@
 import { classCombiner } from "@/utils";
 import Image from "next/image";
 
-const Button = ({ isDisabled, btnType, containerStyles, textStyles, title, children , handleClick }: CustomButtonProps) => {
+export const CustomButton = ({ isDisabled, btnType, containerStyles, textStyles, title, children , handleClick }: CustomButtonProps) => {
     const buttonCombinedClassNames = classCombiner(['custom-btn', containerStyles])
     const textCombinedClassNames = classCombiner(['flex-1', textStyles])
     return (
@@ -30,4 +30,3 @@ const Button = ({ isDisabled, btnType, containerStyles, textStyles, title, child
     )
 }
 
-export default Button; 
