@@ -1,15 +1,19 @@
 import Image from "next/image";
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
-
 import { manufacturers } from "@/constants";
+import { SearchBarContext } from ".";
 
-export interface SearchManuFacturerProps {
-    manufacturer: string;
-    setManuFacturer: (manufacturer: string) => void;
-}
 
-export const SearchManufacturer = ({ manufacturer, setManuFacturer }: SearchManuFacturerProps) => {
+
+export const SearchManufacturer = () => {
+    const context = useContext(SearchBarContext);
+    if (!context) {
+        throw new Error("Manufacturer must be used within a SearchBarProvider");
+    }
+
+    const { manufacturer, setManuFacturer } = context;
+
     const [query, setQuery] = useState("");
 
     const filteredManufacturers =
@@ -24,9 +28,9 @@ export const SearchManufacturer = ({ manufacturer, setManuFacturer }: SearchManu
 
     return (
         <div className='search-manufacturer'>
+            {/* @ts-ignore */}
             <Combobox value={manufacturer} onChange={setManuFacturer}>
                 <div className='relative w-full'>
-                    {/* Button for the combobox. Click on the icon to see the complete dropdown */}
                     <Combobox.Button className='absolute top-[14px]'>
                         <Image
                             src='/car-logo.svg'
