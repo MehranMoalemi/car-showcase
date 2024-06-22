@@ -1,3 +1,4 @@
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 export function classCombiner(classes: (string | undefined)[]): string {
     let combinedStyle = classes.join(" ").trim();
@@ -22,7 +23,7 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
   return rentalRatePerDay.toFixed(0);
 };
 
-export const updateSearchParams = (type: string, value: string) => {
+export const updateFilterSearchParams = (type: string, value: string) => {
   // Get the current URL search params
   const searchParams = new URLSearchParams(window.location.search);
 
@@ -33,6 +34,30 @@ export const updateSearchParams = (type: string, value: string) => {
   const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
 
   return newPathname;
+};
+
+export const updateModelSearchParams = (model: string, manufacturer: string,router: AppRouterInstance) => {
+  // Create a new URLSearchParams object using the current URL search parameters
+  const searchParams = new URLSearchParams(window.location.search);
+
+  // Update or delete the 'model' search parameter based on the 'model' value
+  if (model) {
+    searchParams.set("model", model);
+  } else {
+    searchParams.delete("model");
+  }
+
+  // Update or delete the 'manufacturer' search parameter based on the 'manufacturer' value
+  if (manufacturer) {
+    searchParams.set("manufacturer", manufacturer);
+  } else {
+    searchParams.delete("manufacturer");
+  }
+
+  // Generate the new pathname with the updated search parameters
+  const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
+
+  router.push(newPathname);
 };
 
 export const deleteSearchParams = (type: string) => {
@@ -85,3 +110,4 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 
   return `${url}`;
 } 
+
