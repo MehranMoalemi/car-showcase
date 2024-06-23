@@ -1,12 +1,15 @@
 import { fetchCars } from "@/utils";
 import { fuels, yearsOfProduction } from "@/constants";
-import SearchBar from "@/components/Searchbar";
 import Hero from "@/components/Hero";
 import CustomFilter from "@/components/CustomFilter";
 import CarCard from "@/components/CarCard";
 import ShowMore from "@/components/ShowMore";
+import { SearchBarWrapper } from "@/components/Searchbar";
+import { Manufacturer } from "@/components/Searchbar/Manufacturer";
+import { Model } from "@/components/Searchbar/Model";
+import { SearchButton } from "@/components/Searchbar/SearchButton";
 
-const page = async ({ searchParams }: HomeProps)=> {
+const page = async ({ searchParams }: HomeProps) => {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
@@ -28,7 +31,12 @@ const page = async ({ searchParams }: HomeProps)=> {
         </div>
 
         <div className='home__filters'>
-          <SearchBar />
+          {/* <SearchBar /> */}
+          <SearchBarWrapper>
+            <Manufacturer />
+            <Model />
+            <SearchButton otherClasses="max-sm:hidden" />
+          </SearchBarWrapper>
 
           <div className='home__filter-container'>
             <CustomFilter title='fuel' options={fuels} />
