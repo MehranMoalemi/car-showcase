@@ -15,16 +15,6 @@ export const CustomButton = ({ isDisabled, btnType, containerStyles, textStyles,
             onClick={handleClick}
         >
             <span className={textCombinedClassNames}>{title}</span>
-            {/* {rightIcon && (
-                <div className="relative w-6 h-6">
-                    <Image
-                        src={rightIcon}
-                        alt="arrow_left"
-                        fill
-                        className="object-contain"
-                    />
-                </div>
-            )} */}
             {children}
         </button>
     )
