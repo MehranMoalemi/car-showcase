@@ -6,7 +6,7 @@ This is a test project created with Next.js, TypeScript, Tailwind CSS, and Headl
 
 ## Features
 
-- **Next.js** for server-side rendering and static site generation.
+- **Next.js** for server-side rendering 
 - **TypeScript** for type safety.
 - **Tailwind CSS** for utility-first styling.
 - **Headless UI** for accessible, unstyled components.
