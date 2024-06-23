@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Car Showcase Project
 
-## Getting Started
+Hey there, fully skilled Google engineer! 😉 
 
-First, run the development server:
+This is a test project created with Next.js, TypeScript, Tailwind CSS, and Headless UI to show you my coding style. The APIs might not work since the trial may have ended, so take it easy!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js** for server-side rendering and static site generation.
+- **TypeScript** for type safety.
+- **Tailwind CSS** for utility-first styling.
+- **Headless UI** for accessible, unstyled components.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Note
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Currently using simple `fetch` for data fetching, not RTK Query (maybe later).
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/MehranMoalemi/car-showcase.git
+2. Install dependencies:
+   ```bash
+   npm install
+3. Add your API key in .env.local:
+   ```bash
+   NEXT_PUBLIC_RAPID_API_KEY=your_api_key_here
+4. Run the dev server:
+   ```bash
+   npm run dev
+5. Open http://localhost:3000 to see the project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Usage
+Filter cars by manufacturer and model. The URL updates with search parameters, and results are fetched accordingly.
 
-## Deploy on Vercel
+## Contributing
+Feel free to submit a Pull Request.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Thanks for checking out my project! Take it easy and happy coding! 😄
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+
+
