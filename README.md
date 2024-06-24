@@ -1,6 +1,6 @@
 # Car Showcase Project
 
-Hey there, fully skilled Google engineer! 😉 
+Hey there,
 
 This is a test project created with Next.js, TypeScript, Tailwind CSS, and Headless UI to show you my coding style. The APIs might not work since the trial may have ended, so take it easy!
 
